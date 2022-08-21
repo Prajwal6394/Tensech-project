@@ -15,7 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UpdateHolidayRequestComponent } from './components/emp-forms/update-holiday-request/update-holiday-request.component';
 import { EmpDetailsComponent } from './components/emp-tables/normal-table/emp-details/emp-details.component';
 import { HolidayRequestTableComponent } from './components/emp-tables/normal-table/holiday-request-table/holiday-request-table.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { HolidayRequestTableComponent } from './components/emp-tables/normal-tab
   ],
   imports: [
     CommonModule,
-    EmployeeRoutingModule
+    EmployeeRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class EmployeeModule { }
