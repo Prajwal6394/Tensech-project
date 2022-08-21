@@ -1,13 +1,21 @@
-<h2>Login Form</h2>
-<form>
-
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
-    <button routerLink="../employee">Login</button>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="input-form">
+    <span class="title-input">Email</span>
+    <input class="input-box" type="email" formControlName="email" />
+    <span
+      class="error-message"
+      *ngIf="email && email.invalid && email.touched"
+      >Incorrect email</span
+    >
   </div>
+  <div class="input-form">
+    <span class="title-input">Password</span>
+    <input class="input-box" type="password" formControlName="password" />
+    <span
+      class="error-message"
+      *ngIf="password && password.invalid && password.touched"
+      >Incorrect Password</span
+    >
+  </div>
+  <button class="button">Login</button><br /><br />
 </form>
