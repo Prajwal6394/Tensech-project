@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(){
-    // console.log(this.LoginForm.value);
     console.log(this.loginForm.value.email);
     console.log(this.loginForm.value.password);
   }
