@@ -1,38 +1,38 @@
 <div class="container">
   <h2>Add Employee</h2>
-  <form>
+  <form [formGroup]="addEmployee">
     <label>Employee ID</label>
-    <input type="text" />
+    <input type="text" formControlName = "employeeID" />
     <br />
     <br />
     <label>Name</label>
-    <input type="text" />
+    <input type="text"  formControlName = "employeeName"/>
     <br />
     <br />
     <label>Email</label>
-    <input type="text" /> <br />
+    <input type="text" formControlName = "email" /> <br />
     <br />
     <label>Contact</label> 
-    <input type="text" /> <br />
+    <input type="text" formControlName = "contact" /> <br />
     <br />
-    <label for="cars">Department:</label>
-    <select id="cars" name="cars">
-      <option value="volvo">Enginner</option>
-      <option value="saab">Managment</option>
-      <option value="fiat">Advertising</option>
-      <option value="audi">Designing</option></select
+    <label for="department">Department:</label>
+    <select id="departmentName" name="departmentName" formControlName = "department">
+      <option value="Enginner">Enginner</option>
+      <option value="Managment">Managment</option>
+      <option value="Advertising">Advertising</option>
+      <option value="Designing">Designing</option></select
     ><br />
     <br />
-    <label for="cars">User Type:</label>
-    <select id="cars" name="cars">
-      <option value="volvo">Admin</option>
-      <option value="saab">Employee</option>
+    <label for="user">User Type:</label>
+    <select id="userType" name="userType" formControlName = "userType" >
+      <option value="admin">Admin</option>
+      <option value="employee">Employee</option>
     </select>
     <br /><br />
     <label>Create Password</label>
-    <input type="password" /> <br /><br />
+    <input type="password"  formControlName = "createPass"/> <br /><br />
     <label>Re-eneter Password</label>
-    <input type="password" /> <br /><br />
-    <input type="submit">
+    <input type="password" formControlName = "confirmPass" /> <br /><br />
+    <input type="submit" (click)="onSubmit()">
   </form>
 </div>
