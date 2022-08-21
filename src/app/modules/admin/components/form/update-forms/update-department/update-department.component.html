@@ -1,12 +1,25 @@
 <div class="container">
     <h2>Update Department</h2>
-    <form>
-        <div class="form-group">
-            <label for="departmentName">Department ID</label>
-            <input type="text" class="form-control" id="departmentName" placeholder="Enter Department ID">
-            <label for="departmentName">Department Name</label>
-            <input type="text" class="form-control" id="departmentName" placeholder="Enter Department Name">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+    <form [formGroup]="updateDepartmentForm">
+      <div class="form-group">
+        <label for="departmentName">Department ID</label>
+        <input
+          type="text"
+          class="form-control"
+          id="departmentName"
+          placeholder="Enter Department ID"
+          formControlName="departmentID"
+        /> <br> <br>
+        <label for="departmentName">Department Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="departmentName"
+          placeholder="Enter Department Name"
+          formControlName = "departmentName"
+        /> <br><br>
+      </div>
+      <button style="align-items: center;" type="submit" class="btn btn-primary" (click)="onSubmit()" >Submit</button>
     </form>
-</div>
+  </div>
+  

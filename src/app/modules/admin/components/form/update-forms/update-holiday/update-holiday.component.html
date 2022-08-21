@@ -1,11 +1,14 @@
 <div class="container">
-    <form>
-        <h2>Update Holiday</h2>
-        <label for="date">Date</label> <br/>
-        <input type="date"> <br/> <br/>
-        <label for="date">Reason</label> <br/>
-        <input type="text"> <br/> <br/>
+    <form [formGroup]="updateHolidayForm" >
+      <h2>Update Holiday</h2>
+      <label for="date">Date</label> <br />
+      <input type="date" formControlName = 'date' /> <br />
+      <br />
+      <label for="date">Reason</label> <br />
+      <input type="text" formControlName = 'reason' /> <br />
+      <br />
+  
+      <input type="submit" (click)="onSubmit()">
     </form>
-    
-</div>
-
+  </div>
+  
