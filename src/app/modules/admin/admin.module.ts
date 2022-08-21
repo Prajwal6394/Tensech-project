@@ -30,6 +30,7 @@ import { EmpTableBComponent } from './components/table/button-table/emp-table-b/
 import { HolidayApprovedTableBComponent } from './components/table/button-table/holiday-approved-table-b/holiday-approved-table-b.component';
 import { HolidayRequestTableBComponent } from './components/table/button-table/holiday-request-table-b/holiday-request-table-b.component';
 import { HolidayTableBComponent } from './components/table/button-table/holiday-table-b/holiday-table-b.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -61,11 +62,13 @@ import { HolidayTableBComponent } from './components/table/button-table/holiday-
     EmpTableBComponent,
     HolidayApprovedTableBComponent,
     HolidayRequestTableBComponent,
-    HolidayTableBComponent
+    HolidayTableBComponent,
+
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class AdminModule { }
