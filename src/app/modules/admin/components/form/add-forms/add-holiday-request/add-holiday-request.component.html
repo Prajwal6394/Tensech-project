@@ -1,11 +1,19 @@
 <div class="container">
-  <form [formGroup]="addHolidayRequestForm" >
+  <form [formGroup]="addHolidayRequestForm" (ngSubmit)="onSubmit()" >
     <h2>Add Employee Holiday Request</h2>
     <label>Employee ID</label> <br />
-    <input type="text" formControlName = 'employeeID' /> <br />
+    <input type="text" formControlName = 'employeeID' />
+    <span class="error-messege" *ngIf="
+    addHolidayRequestForm.controls['employeeID'].hasError('required') &&
+    addHolidayRequestForm.controls['employeeID'].dirty
+      ">Enter Employee ID</span> <br />
     <br />
     <label>Employee Name</label> <br />
-    <input type="text" formControlName = 'employeeName' /> <br />
+    <input type="text" formControlName = 'employeeName' />
+    <span class="error-messege" *ngIf="
+    addHolidayRequestForm.controls['employeeName'].hasError('required') &&
+    addHolidayRequestForm.controls['employeeName'].dirty
+      ">Enter Employee Name</span> <br />
     <br />
     <label for="cars">Department:</label>
     <label for="department">Department:</label>
@@ -14,18 +22,34 @@
       <option value="Managment">Managment</option>
       <option value="Advertising">Advertising</option>
       <option value="Designing">Designing</option></select
-    ><br />
+    >
+    employeeName<span class="error-messege" *ngIf="
+    addHolidayRequestForm.controls['department'].hasError('required') &&
+    addHolidayRequestForm.controls['department'].dirty
+      ">Enter department</span><br />
     <br />
     <label>Date</label> <br />
-    <input type="date"  formControlName = 'date'/> <br />
+    <input type="date"  formControlName = 'date'/>
+    <span class="error-messege" *ngIf="
+    addHolidayRequestForm.controls['date'].hasError('required') &&
+    addHolidayRequestForm.controls['date'].dirty
+      ">Enter date </span> <br />
     <br />
     <label>Reason</label> <br />
     <input type="text" formControlName = "reason" />
+    <span class="error-messege" *ngIf="
+    addHolidayRequestForm.controls['reason'].hasError('required') &&
+    addHolidayRequestForm.controls['reason'].dirty
+      ">Enter Your Reason</span>
     <select id="decison" name="decison" formControlName = 'decison'>
       <option value="Approved">Approved</option>
       <option value="Reject">Reject</option></select
-    ><br />
+    >
+    <span class="error-messege" *ngIf="
+    addHolidayRequestForm.controls['decison'].hasError('required') &&
+    addHolidayRequestForm.controls['decison'].dirty
+      ">What have you decided</span><br />
     <br />
-    <input type="submit" (click)="onSubmit()" >
+    <input type="submit" >
   </form>
 </div>

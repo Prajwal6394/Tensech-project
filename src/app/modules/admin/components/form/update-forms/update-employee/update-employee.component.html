@@ -3,17 +3,33 @@
   <form [formGroup]="updateEmployee">
     <label>Employee ID</label>
     <input type="text" formControlName = "employeeID" />
+    <span class="error-messege" *ngIf="
+    updateEmployee.controls['employeeID'].hasError('required') &&
+    updateEmployee.controls['employeeID'].dirty
+          ">Enter employee ID </span>
     <br />
     <br />
     <label>Name</label>
     <input type="text"  formControlName = "employeeName"/>
+    <span class="error-messege" *ngIf="
+    updateEmployee.controls['employeeName'].hasError('required') &&
+    updateEmployee.controls['employeeName'].dirty
+          ">Enter employee Name</span>
     <br />
     <br />
     <label>Email</label>
-    <input type="text" formControlName = "email" /> <br />
+    <input type="text" formControlName = "email" />
+    <span class="error-messege" *ngIf="
+    updateEmployee.controls['email'].hasError('required') &&
+    updateEmployee.controls['email'].dirty
+          ">Enter email </span> <br />
     <br />
     <label>Contact</label> 
-    <input type="text" formControlName = "contact" /> <br />
+    <input type="text" formControlName = "contact" />
+    <span class="error-messege" *ngIf="
+    updateEmployee.controls['contact'].hasError('required') &&
+    updateEmployee.controls['contact'].dirty
+          ">Enter contact </span> <br />
     <br />
     <label for="department">Department:</label>
     <select id="departmentName" name="departmentName" formControlName = "department">
@@ -21,18 +37,34 @@
       <option value="Managment">Managment</option>
       <option value="Advertising">Advertising</option>
       <option value="Designing">Designing</option></select
-    ><br />
+    >
+    <span class="error-messege" *ngIf="
+    updateEmployee.controls['department'].hasError('required') &&
+    updateEmployee.controls['department'].dirty
+          ">Enter department </span><br />
     <br />
     <label for="user">User Type:</label>
     <select id="userType" name="userType" formControlName = "userType" >
       <option value="admin">Admin</option>
       <option value="employee">Employee</option>
     </select>
+    <span class="error-messege" *ngIf="
+    updateEmployee.controls['userType'].hasError('required') &&
+    updateEmployee.controls['userType'].dirty
+          ">Enter user Type </span>
     <br /><br />
     <label>Create Password</label>
-    <input type="password"  formControlName = "createPass"/> <br /><br />
+    <input type="password"  formControlName = "createPass"/>
+    <span class="error-messege" *ngIf="
+    updateEmployee.controls['createPass'].hasError('required') &&
+    updateEmployee.controls['createPass'].dirty
+          ">Enter 'password </span> <br /><br />
     <label>Re-eneter Password</label>
-    <input type="password" formControlName = "confirmPass" /> <br /><br />
+    <input type="password" formControlName = "confirmPass" />
+    <span class="error-messege" *ngIf="
+    updateEmployee.controls['confirmPass'].hasError('required') &&
+    updateEmployee.controls['confirmPass'].dirty
+          ">Re-enter password </span> <br /><br />
     <input type="submit" (click)="onSubmit()">
   </form>
 </div>

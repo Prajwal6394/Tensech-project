@@ -1,13 +1,22 @@
 <div class="container">
-  <form [formGroup]="addHolidayForm" >
+  <form [formGroup]="addHolidayForm" (ngSubmit)="onSubmit()" >
     <h2>Add Holiday</h2>
     <label for="date">Date</label> <br />
-    <input type="date" formControlName = 'date' /> <br />
+    <input type="date" formControlName = 'date' />
+    <span class="error-messege" *ngIf="
+    addHolidayForm.controls['date'].hasError('required') &&
+    addHolidayForm.controls['date'].dirty
+      ">Enter date</span>  <br />
     <br />
     <label for="date">Reason</label> <br />
-    <input type="text" formControlName = 'reason' /> <br />
+    <input type="text" formControlName = 'reason' />
+    <span class="error-messege" *ngIf="
+    addHolidayForm.controls['reason'].hasError('required') &&
+    addHolidayForm.controls['reason'].dirty
+      ">Enter your Reason</span>
+     <br />
     <br />
 
-    <input type="submit" (click)="onSubmit()">
+    <input type="submit" >
   </form>
 </div>

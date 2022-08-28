@@ -1,24 +1,22 @@
 <div class="container">
   <h2>Add Department</h2>
-  <form [formGroup]="addDepartmentForm">
+  <form [formGroup]="addDepartmentForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="departmentName">Department ID</label>
-      <input
-        type="text"
-        class="form-control"
-        id="departmentName"
-        placeholder="Enter Department ID"
-        formControlName="departmentID"
-      /> <br> <br>
+      <input type="text" class="form-control" id="departmentName" placeholder="Enter Department ID"
+        formControlName="departmentID" />
+      <span class="error-messege" *ngIf="
+      addDepartmentForm.controls['departmentID'].hasError('required') &&
+      addDepartmentForm.controls['departmentID'].dirty
+        ">Enter Employee ID</span> <br> <br>
       <label for="departmentName">Department Name</label>
-      <input
-        type="text"
-        class="form-control"
-        id="departmentName"
-        placeholder="Enter Department Name"
-        formControlName = "departmentName"
-      /> <br><br>
+      <input type="text" class="form-control" id="departmentName" placeholder="Enter Department Name"
+        formControlName="departmentName" />
+        <span class="error-messege" *ngIf="
+        addDepartmentForm.controls['departmentName'].hasError('required') &&
+        addDepartmentForm.controls['departmentName'].dirty
+          ">Enter Employee Name</span>  <br><br>
     </div>
-    <button style="align-items: center;" type="submit" class="btn btn-primary" (click)="onSubmit()" >Submit</button>
+    <button style="align-items: center;" type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
