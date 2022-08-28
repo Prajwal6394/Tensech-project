@@ -1,23 +1,52 @@
 <div class="container">
     <h2>Update Personal Deatils</h2>
-    <form [formGroup] = "profileUpdateForm">
+    <form [formGroup]="profileUpdateForm"  (ngSubmit)="onSubmit()" >
         <label for="Employee ID">Employee ID</label><br>
-        <input type="text" formControlName = "employeeID" /> <br><br>
+        <input type="text" formControlName="employeeID" />
+        <span class="error-messege" *ngIf="
+        profileUpdateForm.controls['employeeID'].hasError('required') &&
+        profileUpdateForm.controls['employeeID'].dirty
+        ">Enter Employee ID</span> <br><br>
 
         <label for="Employee Name">Employee Name</label><br>
-        <input type="text" formControlName = "employeeName" /> <br><br>
+        <input type="text" formControlName="employeeName" />
+        <span class="error-messege" *ngIf="
+        profileUpdateForm.controls['employeeName'].hasError('required') &&
+        profileUpdateForm.controls['employeeName'].dirty
+        ">Enter Employee Name</span> <br><br>
 
         <label for="Email"> Email</label><br>
-        <input type="email" formControlName = "email" /> <br><br>
+        <input type="email" formControlName="email" />
+        <span class="error-messege" *ngIf="
+        profileUpdateForm.controls['employeeName'].hasError('required') &&
+        profileUpdateForm.controls['employeeName'].dirty
+        ">Enter Email</span>
+        <span class="error-messege" *ngIf="
+        profileUpdateForm.controls['email'].invalid &&
+        profileUpdateForm.controls['email'].touched &&
+        profileUpdateForm.controls['email'].hasError('email')
+        ">Invalid Email ID</span> <br><br>
 
         <label for="Contact">Contact</label><br>
-        <input type="text" formControlName = "contact" /> <br><br>
+        <input type="text" formControlName="contact" />
+        <span class="error-messege" *ngIf="
+        profileUpdateForm.controls['contact'].hasError('required') &&
+        profileUpdateForm.controls['contact'].dirty
+        ">Enter Contact Number</span> <br><br>
 
         <label for="Password">Password</label><br>
-        <input type="password" formControlName = "password" /> <br><br>
+        <input type="password" formControlName="password" />
+        <span class="error-messege" *ngIf="
+        profileUpdateForm.controls['password'].hasError('required') &&
+        profileUpdateForm.controls['password'].dirty
+        ">Enter Password</span> <br><br>
 
         <label for="Re-eneter">Re-enete password</label><br>
-        <input type="password" formControlName = "confirmPassword" /> <br><br>
-        <input type="submit" (click)="onSubmit()" >
+        <input type="password" formControlName="confirmPassword" />
+        <span class="error-messege" *ngIf="
+        profileUpdateForm.controls['confirmPassword'].hasError('required') &&
+        profileUpdateForm.controls['confirmPassword'].dirty
+        ">Re-enter Password</span> <br><br>
+        <input type="submit" >
     </form>
 </div>
